@@ -58,7 +58,7 @@ export function DashboardClient({
   const testS3Config = async () => {
     try {
       const response = await fetch("/api/test-s3");
-      const result = await response.json();
+      const result = await response.json() as { success: boolean; error?: string };
       
       if (result.success) {
         toast.success("S3 Configuration Test", {
@@ -71,7 +71,7 @@ export function DashboardClient({
       }
       
       console.log("S3 Test Result:", result);
-    } catch (error) {
+    } catch {
       toast.error("S3 Test Failed", {
         description: "Failed to test S3 configuration.",
       });
@@ -191,7 +191,9 @@ export function DashboardClient({
         description: errorMessage,
         action: {
           label: "Retry",
-          onClick: () => handleUpload(),
+          onClick: () => {
+            void handleUpload();
+          },
         },
       });
     } finally {
@@ -243,7 +245,7 @@ export function DashboardClient({
                 disabled={uploading}
                 maxFiles={1}
               >
-                {(dropzone: DropzoneState) => (
+                {(_dropzone: DropzoneState) => (
                   <>
                     <div className="flex flex-col items-center justify-center space-y-4 rounded-lg p-10 text-center">
                       <UploadCloud className="text-muted-foreground h-12 w-12" />

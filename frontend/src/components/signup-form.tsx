@@ -19,6 +19,7 @@ import { signupSchema, type SignupFormValues } from "~/schemas/auth";
 import { signUp } from "~/actions/auth";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export function SignupForm({
   className,
@@ -56,10 +57,13 @@ export function SignupForm({
           "Account created but couldn't sign in automatically. Please try again.",
         );
       } else {
+        toast.success("Account created successfully");
         router.push("/dashboard");
       }
-    } catch (error) {
-      setError("An unexpected error occured");
+    } catch {
+      toast.error("Failed to create account", {
+        description: "Please try again.",
+      });
     } finally {
       setIsSubmitting(false);
     }
