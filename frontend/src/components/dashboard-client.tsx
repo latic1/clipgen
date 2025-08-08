@@ -207,10 +207,10 @@ export function DashboardClient({
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">
-            Podcast Clipper
+            ClipGen
           </h1>
           <p className="text-muted-foreground">
-            Upload your podcast and get AI-generated clips instantly
+            AI-powered video clipping platform
           </p>
         </div>
         <div className="flex items-center space-x-2">

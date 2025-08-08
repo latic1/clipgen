@@ -1,0 +1,16 @@
+{
+  "name": "ClipGen - AI-Powered Video Clipping Platform",
+  "short_name": "ClipGen",
+  "description": "Transform long videos into viral clips automatically with AI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

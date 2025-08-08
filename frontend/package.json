@@ -1,6 +1,7 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "clipgen",
+  "version": "1.0.0",
+  "description": "AI-powered video clipping platform that transforms long videos into viral clips automatically",
   "private": true,
   "type": "module",
   "scripts": {
