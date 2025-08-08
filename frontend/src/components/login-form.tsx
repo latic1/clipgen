@@ -28,6 +28,8 @@ export function LoginForm() {
         redirect: false,
       });
 
+      console.log(result);
+
       if (result?.error) {
         toast.error("Login failed", {
           description: "Invalid email or password.",

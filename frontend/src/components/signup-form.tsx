@@ -52,6 +52,8 @@ export function SignupForm({
         redirect: false,
       });
 
+      console.log(signUpResult);
+
       if (signUpResult?.error) {
         setError(
           "Account created but couldn't sign in automatically. Please try again.",
